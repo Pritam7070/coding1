@@ -1,0 +1,21 @@
+package pkg1.emi;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+
+public class EmiController {
+	@GetMapping("/emi/test1")
+	public double calcEMI() {
+		int p=1000;
+		int t=2;
+		double r=8.0;
+		double si=p*t*r/100;
+		double amt=p+si;
+		int months=t*12;
+		double emi=amt/months;
+		return emi;
+	}
+	
+}

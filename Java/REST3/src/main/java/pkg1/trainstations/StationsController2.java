@@ -20,7 +20,6 @@ public class StationsController2 {
 			s1=sc1.nextLine();
 			s2=s2+s1+"\n";
 		}
-		
 		return s2;
 	}
 	

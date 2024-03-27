@@ -1,0 +1,3 @@
+Amar,Swift,600000,3,8.0
+Babu,WagonR,500000,3,8.0
+Chandra,Celerio,400000,2,8.0

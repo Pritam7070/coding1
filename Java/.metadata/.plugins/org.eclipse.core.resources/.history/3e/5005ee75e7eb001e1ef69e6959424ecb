@@ -1,0 +1,34 @@
+package pkg1.emi;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+
+public class EmiController {
+	@GetMapping("/emi/test1")
+	public double calcEMI() {
+		int p=1000;
+		int t=2;
+		double r=8.0;
+		double si=p*t*r/100;
+		double amt=p+si;
+		int months=t*12;
+		double emi=amt/months;
+		return emi;
+	}
+	@PostMapping("/emi/calc1")
+	public double calcEMI2(@RequestBody EmiEntity ee) {
+		int p1=ee.getP();
+		int t1=ee.getT();
+		double r1=ee.getR();
+		double si1=p1*t1*r1/100;
+		int months1=t1*12;
+		double amt1=p1+si1;
+		double emi1=amt1/months1;
+		return emi1;
+		}
+		
+}
