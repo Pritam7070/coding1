@@ -1,0 +1,14 @@
+package pkg1.cric;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+
+public class Cric1Controller {
+	@GetMapping("cric/bestbatsman")
+	public static String findBestBatsman() {
+		return "Sachin";
+	}
+
+}

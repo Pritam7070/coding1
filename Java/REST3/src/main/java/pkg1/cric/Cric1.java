@@ -13,47 +13,47 @@ public class Cric1 {
 		Scanner sc1=new Scanner(f1);
 		ArrayList<String> list1=new ArrayList<>();
 		ArrayList<Integer> list2=new ArrayList<>();
+		ArrayList<String> list3=new ArrayList<>();
 		String[] arr1;
-		String[] arr2= {"KL Rahul","RG Sharma","V Kohli","SA Yadav","RR Pant","RA Jadeja","HH Pandya","B Kumar"};
-		int[] arr3=new int[11];
+		int[] arr3=new int[22];
 		String s1="";
 		String name1="";
 		String bestBatsman="";
 		int total1=0;
 		int maxRuns=0;
 		
-		
 		for(int i=0;i<71;i++) {
 			s1=sc1.nextLine();
+			if (i >= 22 && i < 43) {
+				arr1=s1.split(",");
+				list3.add(arr1[3]);
+			}
 		}
-		for(int i=0;i<200;i++) {
+		
+		for(int i=0;i<230;i++) {
 			s1=sc1.nextLine();
 			arr1=s1.split(",");
 			list1.add(arr1[4]);
 			list2.add(Integer.parseInt(arr1[7]));
 		}
-		//System.out.println(list1);
-		//System.out.println(list2);
-		
-		for(int j=0;j<arr2.length;j++) {
+	
+		for(int j=0;j<list3.size();j++) {
 			total1=0;
-			name1=arr2[j];
+			name1=list3.get(j);
 			for(int i=0;i<list1.size();i++) {
 				if(list1.get(i).equals(name1)) {
 					total1=total1+list2.get(i);
 				}
 				arr3[j]=total1;
 			}
-			System.out.println(arr2[j]+" has scored " +arr3[j]+" runs");
 		}
-		for(int i=0;i<arr2.length;i++) {
+		for(int i=0;i<list3.size();i++) {
 			if(arr3[i]>maxRuns) {
 				maxRuns=arr3[i];
-				bestBatsman=arr2[i];
+				bestBatsman=list3.get(i);
 			}
 		}
-		System.out.println("Best batsman is :"+bestBatsman+" with runs "+maxRuns);
-		
+		System.out.println("Best batsman is :"+bestBatsman+" with runs "+maxRuns);	
 	}
 
 }
