@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Cric2 {
 
@@ -12,25 +13,11 @@ public class Cric2 {
 		Scanner sc1=new Scanner(f1);
 		ArrayList<String> list1=new ArrayList<>();
 		ArrayList<String> list2=new ArrayList<>();
-		ArrayList<String> list3=new ArrayList<>();
 		String[] arr1=new String[16];
-		int[] arr2=new int[22];
 		String s1="";
-		String name1="";
-		String bestBowler="";
-		int tota1=0;
-		int maxWicket=0;
 		int len1;
 		
-		for(int i=0;i<71;i++) {
-			s1=sc1.nextLine();
-			if(i>=22 && i<43) {
-				arr1=s1.split(",");
-				list3.add(arr1[3]);
-			}	
-		}
-		//System.out.println(list3);
-		for(int i=0;i<230;i++) {
+		for(int i=0;i<236;i++) {
 			s1=sc1.nextLine();
 			arr1=s1.split(",");
 			len1=arr1.length;
@@ -39,9 +26,19 @@ public class Cric2 {
 				list2.add(arr1[14]);
 			}
 		}
-		System.out.println(list1);
-		System.out.println(list2);
+	
+		int maxCount = 0;
+        String maxOccurringElement = null;
+        for (String element : list1) {
+            int count = Collections.frequency(list1, element);
+            if (count > maxCount) {
+                maxCount = count;
+                maxOccurringElement = element;
+            }
+        }
 
+        System.out.println("The bowler that takes maximum wicket is: " + maxOccurringElement +
+                ", which takes " + maxCount + " wickets.");
 	}
 
 }
