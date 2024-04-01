@@ -13,6 +13,7 @@ public class BitcoinEntity3 {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String date1;
+	private double price1;
 	public BitcoinEntity3(int id, String date1, double price1) {
 		super();
 		this.id = id;
@@ -37,6 +38,6 @@ public class BitcoinEntity3 {
 	public void setPrice1(double price1) {
 		this.price1 = price1;
 	}
-	private double price1;
+	
 
 }
