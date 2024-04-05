@@ -1,0 +1,13 @@
+package rest11;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Rest11Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Rest11Application.class, args);
+	}
+
+}
